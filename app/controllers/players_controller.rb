@@ -3,6 +3,11 @@ class PlayersController < ApplicationController
     @players = Player.all
   end
 
+  def remote_players
+    @players = Player.all
+    render json: @players.to_json(include: { team: { methods: [:full_name] } })
+  end
+
   def show
     @player = Player.find(params[:id])
   end

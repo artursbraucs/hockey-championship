@@ -16,12 +16,13 @@
   </thead>
   <tbody>
     <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.number %></td>
-        <td><%= player.position %></td>
-        <td><%= player.club %></td>
-        <td><%= player.team.full_name %></td>
+      <tr data-player-id="<%= player.id %>">
+        <td data-player-attribute="name"><%= player.name %></td>
+        <td data-player-attribute="number"><%= player.number %></td>
+        <td data-player-attribute="position"><%= player.position %></td>
+        <td data-player-attribute="club"><%= player.club %></td>
+        <td data-player-attribute="team_full_name"><%= player.team.full_name %></td>
+
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
