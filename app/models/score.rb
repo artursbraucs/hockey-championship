@@ -1,4 +1,6 @@
 class Score < ApplicationRecord
+  include Test
+
   belongs_to :home_team, class_name: 'Team'
   belongs_to :visitor_team, class_name: 'Team'
 
@@ -9,6 +11,7 @@ class Score < ApplicationRecord
   def points_for_winner_team
     return 0 if winner_team.nil?
     return 2 if overtime
+
     3
   end
 
@@ -17,8 +20,6 @@ class Score < ApplicationRecord
       home_team
     elsif home_goals < visitor_goals
       visitor_team
-    else
-      nil
     end
   end
 
