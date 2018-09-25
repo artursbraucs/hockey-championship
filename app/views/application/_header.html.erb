@@ -1,0 +1,19 @@
+<div id="header">
+  <div id="logo">
+    <div id="logo_text">
+      <h1>
+        <%= link_to root_path do %>
+          Ice Hockey World Championships <span class="logo_colour">2019</span>
+        <% end %>
+      </h1>
+      <h2>Best 16 teams, tickets on sale</h2>
+    </div>
+  </div>
+  <div id="menubar">
+    <ul id="menu">
+      <li class="<%= "selected" if controller_name == 'scores' %>"><%= link_to 'Home', root_path %></li>
+      <li class="<%= "selected" if controller_name == 'teams' %>"><%= link_to 'Teams', teams_path %></li>
+      <li class="<%= "selected" if controller_name == 'players' %>"><%= link_to 'Players', players_path %></li>
+    </ul>
+  </div>
+</div>

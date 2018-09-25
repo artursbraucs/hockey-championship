@@ -1,6 +1,25 @@
 class ScoresController < ApplicationController
   def index
     @scores = Score.all
+
+    respond_to do |format|
+      format.html
+      format.json do
+        render(
+          json:
+            @scores.to_json(
+              include: {
+                home_team: {
+                  methods: [:full_name]
+                }, visitor_team: {
+                  methods: [:full_name]
+                }
+              },
+              methods: [:winner_team, :points_for_winner_team]
+            )
+        )
+      end
+    end
   end
 
   def show
