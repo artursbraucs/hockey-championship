@@ -1,0 +1,43 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'test/**/*'
+    - 'bin/**/*'
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics:
+  Severity: refactor
+
+Metrics/LineLength:
+  Severity: convention
+  Max: 140
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/SymbolArray:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
