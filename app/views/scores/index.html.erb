@@ -24,8 +24,7 @@
         <td data-score-attribute="visitor_team"><%= score.visitor_team.full_name %></td>
         <td data-score-attribute="home_goals"><%= score.home_goals %></td>
         <td data-score-attribute="visitor_goals"><%= score.visitor_goals %></td>
-        <td data-score-attribute="overtime"><%= score.overtime %></td>
-
+        <td data-score-attribute="overtime"><%= title_for_boolean(score.overtime ) %></td>
         <td data-score-attribute="winner_team"><b><%= score.winner_team&.full_name %><b></td>
         <td data-score-attribute="points_for_winner_team"><%= score.points_for_winner_team %></td>
 
